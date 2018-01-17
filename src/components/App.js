@@ -1,7 +1,7 @@
 import React from 'react';
 import Plays from './Plays';
-import { Container, Header } from 'semantic-ui-react';
 import axios from 'axios';
+import { Container, Header } from 'semantic-ui-react';
 
 class App extends React.Component {
   state = { plays: [] };

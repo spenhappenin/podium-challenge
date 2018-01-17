@@ -1,19 +1,19 @@
 import React from 'react';
 import { Card } from 'semantic-ui-react';
 
-const Play = (props) => (
+const Play = ({ play: {author, rating, publish_date} }) => (
   <Card>
     <Card.Content>
       <Card.Header>
-        { props.play.author }
+        { author }
       </Card.Header>
       <Card.Meta>
         <span className='date'>
-          Rating: { props.play.rating }
+          Rating: { rating }
         </span>
       </Card.Meta>
       <Card.Description>
-        { props.play.publish_date }
+        { publish_date }
       </Card.Description>
     </Card.Content>
   </Card>
