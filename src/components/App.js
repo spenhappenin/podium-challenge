@@ -1,12 +1,27 @@
-import React, { Component } from 'react';
-import '../styles/App.css';
+import React from 'react';
+import Plays from './Plays';
+import { Container, Header } from 'semantic-ui-react';
+import axios from 'axios';
 
-class App extends Component {
+class App extends React.Component {
+  state = { plays: [] };
+
+  componentDidMount() {
+    axios.get('http://shakespeare.podium.co/api/reviews', { headers: { 'Authorization': 'koOheljmQX' } } )
+      .then( res => {
+        this.setState({ plays: res.data.data });
+      })
+      .catch( res => {
+        console.log(res);
+      })
+  }
+
   render() {
     return (
-      <div>
-        <h1>Podium Code Challenge</h1>
-      </div>
+      <Container>
+        <Header as='h1'>Podium Code Challenge</Header>
+        <Plays plays={this.state.plays} />
+      </Container>
     );
   }
 }
