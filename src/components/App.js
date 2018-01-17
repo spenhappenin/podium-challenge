@@ -1,15 +1,15 @@
 import React from 'react';
-import Plays from './Plays';
+import Reviews from './Reviews';
 import axios from 'axios';
 import { Container, Header } from 'semantic-ui-react';
 
 class App extends React.Component {
-  state = { plays: [] };
+  state = { reviews: [] };
 
   componentDidMount() {
     axios.get('http://shakespeare.podium.co/api/reviews', { headers: { 'Authorization': 'koOheljmQX' } } )
       .then( res => {
-        this.setState({ plays: res.data.data });
+        this.setState({ reviews: res.data.data });
       })
       .catch( res => {
         console.log(res);
@@ -20,7 +20,7 @@ class App extends React.Component {
     return (
       <Container>
         <Header as='h1'>Podium Code Challenge</Header>
-        <Plays plays={this.state.plays} />
+        <Reviews reviews={this.state.reviews} />
       </Container>
     );
   }

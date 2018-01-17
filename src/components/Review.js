@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'semantic-ui-react';
 
-const Play = ({ play: {author, rating, publish_date} }) => (
+const Review = ({ review: {author, rating, publish_date} }) => (
   <Card>
     <Card.Content>
       <Card.Header>
@@ -19,4 +19,4 @@ const Play = ({ play: {author, rating, publish_date} }) => (
   </Card>
 )
 
-export default Play;
+export default Review;
