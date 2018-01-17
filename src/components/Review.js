@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Card } from 'semantic-ui-react';
 
 const Review = ({ review: {author, rating, publish_date} }) => (
@@ -18,5 +19,9 @@ const Review = ({ review: {author, rating, publish_date} }) => (
     </Card.Content>
   </Card>
 )
+
+Review.propTypes = {
+  review: PropTypes.object,
+}
 
 export default Review;

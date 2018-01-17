@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Review from './Review';
 import { Grid } from 'semantic-ui-react';
 
@@ -17,5 +18,9 @@ const Reviews = ({ reviews }) => (
     </Grid.Row>
   </Grid> 
 );
+
+Reviews.propTypes = {
+  reviews: PropTypes.arrayOf(PropTypes.object),
+}
 
 export default Reviews;
