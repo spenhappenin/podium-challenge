@@ -7,7 +7,7 @@ class App extends React.Component {
   state = { reviews: [] };
 
   componentDidMount() {
-    axios.get('http://shakespeare.podium.co/api/reviews', { headers: { 'Authorization': 'koOheljmQX' } } )
+    axios.get('http://shakespeare.podium.co/api/reviews', { headers: { 'Authorization': process.env.REACT_APP_API_KEY } } )
       .then( res => {
         this.setState({ reviews: res.data.data });
       })

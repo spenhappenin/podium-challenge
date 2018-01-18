@@ -8,7 +8,7 @@ class ReviewDescription extends React.Component {
 
   componentDidMount() {
     const { reviewId } = this.props;
-    axios.get(`http://shakespeare.podium.co/api/reviews/${reviewId}`, { headers: { 'Authorization': 'koOheljmQX' } })
+    axios.get(`http://shakespeare.podium.co/api/reviews/${reviewId}`, { headers: { 'Authorization': process.env.REACT_APP_API_KEY } })
       .then( res => {
         this.setState({ description: res.data.data.body });
       })
