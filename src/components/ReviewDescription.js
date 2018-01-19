@@ -13,7 +13,7 @@ class ReviewDescription extends React.Component {
         this.setState({ description: res.data.data.body });
       })
       .catch(res => {
-        console.log(res);
+        console.log(res.message);
       })
   }
 

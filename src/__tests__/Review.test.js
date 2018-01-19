@@ -10,4 +10,4 @@ test('should toggle show state when button is clicked', () => {
 
   button.simulate('click');
   expect(component.state()).toEqual({ show: !show });
-})
+});
