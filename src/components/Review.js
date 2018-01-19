@@ -1,25 +1,10 @@
 import React from 'react';
 import ReviewDescription from './ReviewDescription';
 import PropTypes from 'prop-types';
-// import axios from 'axios';
 import { Button, Card } from 'semantic-ui-react';
 
 class Review extends React.Component {
   state = { show: false };
-
-  showDetails = (reviewId) => {
-    // const { show } = this.state;
-    // if(show) {
-    //   axios.get(`http://shakespeare.podium.co/api/reviews/${reviewId}`, { headers: { 'Authorization': 'koOheljmQX' } })
-    //     .then( res => {
-    //       console.log(res)
-    //     })
-    //     .catch( res => {
-    //       console.log(res)
-    //     })
-    // }
-    return <p>Working!</p>
-  }
 
   toggleShow = () => this.setState({ show: !this.state.show });
 
@@ -44,8 +29,7 @@ class Review extends React.Component {
             <Button basic onClick={this.toggleShow}>
               { show ? 'Close Details' : 'Show Details' }
             </Button>
-            {/* { show ? () => this.showDetails(id) : null } */}
-            { show ? <ReviewDescription reviewId={id} /> : null }
+            { show && <ReviewDescription reviewId={id} /> }
           </Card.Content>
         </Card.Content>
       </Card>

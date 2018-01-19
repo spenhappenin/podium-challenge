@@ -13,12 +13,17 @@
     "semantic-ui-react": "^0.77.2"
   },
   "devDependencies": {
-    "react-scripts": "1.1.0"
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-scripts": "1.1.0",
+    "react-test-renderer": "^16.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --watch",
     "eject": "react-scripts eject"
   }
 }
