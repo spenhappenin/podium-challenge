@@ -2,7 +2,7 @@ import React from 'react';
 import App from '../components/App';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 test('renders without crashing', () => {
   const component = mount(<App />);
