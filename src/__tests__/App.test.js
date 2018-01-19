@@ -21,7 +21,7 @@ test('should return data from response', () => {
 });
 
 test('should set review state on componentDidMount', () => {
-  const review = { rating: 3.2, id: 9793364045824, publish_date: "2016-09-04T23:25:47.642388Z", author: "Fay Lemke" };
+  const review = { rating: 3.2, id: '9793364045824', publish_date: "2016-09-04T23:25:47.642388Z", author: "Fay Lemke" };
   const component = mount(<App />);
   expect(component.state()).toEqual({ reviews: [] });
   expect(component.setState({ reviews: [review] }));
