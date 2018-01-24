@@ -9,10 +9,12 @@ class App extends React.Component {
   componentDidMount() { 
     axios.get('http://shakespeare.podium.co/api/reviews', { headers: { 'Authorization': process.env.REACT_APP_API_KEY } } )
       .then( res => {
-        this.setState({ reviews: res.data.data });
+        const { data: { data: reviews } } = res;
+        this.setState({ reviews });
       })
       .catch( res => {
-        console.log(res.message)
+        const { message } = res;
+        console.log(message)
       })
   }
 

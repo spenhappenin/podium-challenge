@@ -10,10 +10,12 @@ class ReviewDescription extends React.Component {
     const { reviewId } = this.props;
     axios.get(`http://shakespeare.podium.co/api/reviews/${reviewId}`, { headers: { 'Authorization': process.env.REACT_APP_API_KEY } })
       .then( res => {
-        this.setState({ description: res.data.data.body });
+        const { data: { data: { body: description } } } = res;
+        this.setState({ description });
       })
       .catch(res => {
-        console.log(res.message);
+        const { message } = res;
+        console.log(message);
       })
   }
 

@@ -26,7 +26,7 @@ class Review extends React.Component {
             { publish_date }
           </Card.Description>
           <Card.Content extra>
-            <Button basic onClick={this.toggleShow}>
+            <Button basic color='blue' onClick={this.toggleShow}>
               { show ? 'Close Details' : 'Show Details' }
             </Button>
             { show && <ReviewDescription reviewId={id} /> }
